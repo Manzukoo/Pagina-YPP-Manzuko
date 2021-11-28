@@ -1,0 +1,42 @@
+#tema-oscuro {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #0c0306,
+    #13060e,
+    #180a15,
+    #1a0e1c,
+    #1b101f,
+    #1c1223,
+    #1c1427,
+    #1d1429,
+    #1e152a,
+    #1f152c,
+    #20152e
+  ) !important;
+}
+
+#tema-oscuro #header .active {
+  color: #d6c5e7 !important;
+}
+
+#tema-oscuro .quien-soy b,
+h1 {
+  color: #a494b5;
+}
+
+#tema-oscuro .quien-soy p {
+  color: #756685;
+}
+
+#tema-oscuro .quien-soy .icono {
+  color: #a494b5;
+}
+
+#tema-oscuro #info-jugué .completo {
+  color: #fff !important;
+}
+
+#tema-oscuro #footer {
+  background-color: #15101b;
+}

@@ -1,0 +1,292 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/*uso de font-size*/
+.desc{
+  font-size: 1.5em;
+}
+
+
+/*Hacer una transición a todos los elementos cuando haya cualquier cambio, 
+esto me sirve para hacer el efecto que cambia suavemente de tema oscuro a tema claro y viceversa*/
+*{
+  transition: all .18s ease-out;
+}
+
+/*Poner le HEADER (encabezado de la pagina) con un anacho al 100%, 
+z-index alto para que se superposicione sobre otros elementos (en este caso el main)
+y puse el flex: 0 0 auto para que el tamaño sea estatico y para que tenga que ocupar lo que tenga que ocupar. 
+*/
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  font-family: "Open Sans", sans-serif !important;
+  flex: 0 0 auto;
+}
+
+/*
+Esto sirve para mantener los elementos li del header separados entre si
+*/
+/*uso de margin para la tarea*/
+#header li {
+  margin-right: 0.7em;
+}
+/*
+Cuando un elemento tenga la clase active que se modifique y se ponga todo en Mayusculas + la fuente mas grande
+esto funciona para los elementos li.
+*/
+#header .active {
+  font-size: large;
+  text-transform: uppercase;
+  animation: active-nav 1.5s infinite alternate;
+}
+
+
+/*
+Este es el main, todo el contenido de la pagina que no sea el HEADER ni FOOTER
+puse un padding top de 5em para que haya un espacio mas grande entre el header y main
+el z-index en este caso está en 10 para no tapar el header, si estaria mas alto que 20 el header se puede tapar con el main
+en este caso el flex está así para que ocupe todo el contenido restante entre el header y footer
+*/
+#main {
+  padding-top: 5em;
+  z-index: 10;
+  flex: 1 0 auto;
+}
+
+/*
+La parte Section es donde tengo guardado cada titulo de cada sector, por ejemplo en el titulo de mi biografia explica que es ese apartado
+le pongo un margin-bottom: 7em para que esté un poco mas alto que los demas elementos
+y un padding 2em para que haya un espacio arriba, derecha, abajo y izquierda, el espacio es minimo, es para que las palabras se vean mejor ordenadas
+*/
+section {
+  margin-bottom: 7em;
+  padding: 2em;
+}
+
+
+/*
+Acá le ponemos a la clase .titulo-nav-nombre que seria el texto grande estilo neon que aparece en el menú de arriba
+le ponemos un color blanco con una sombra de blanco a violeta + una animación llamada apagon, con duración de 1.5segundos, que se repita infinitamente con la animación alternate, lo que hace es que cuando termine la animación pase del final al principio animandolo y no se corta bruscamente.
+*/
+.titulo-nav-nombre {
+  color: #fff !important;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  animation: apagon 1.5s infinite alternate;
+}
+
+/*ANIMACIONES*/
+
+/*
+Animación tipo neón para el titulo de la barra de navegación.
+*/
+@keyframes apagon {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
+      0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/*
+Animación para el logo del discord de latamcommunity que está en el footer.
+*/
+
+@keyframes ltmcmm {
+  100% {
+    text-shadow: 0 0 2px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0), 0 0 8px rgb(117, 117, 117), 0 0 10px #fe1313,
+      0 0 20px #fe1313, 0 0 40px #fe1313;
+  }
+}
+
+/*
+Animación para el active de la barra de navegación.
+*/
+@keyframes active-nav-test {
+  100% {
+    text-shadow: 40px 0 5px rgb(156, 156, 156), 0 0 10px rgb(0, 0, 0)
+  }
+}
+
+@keyframes active-nav {
+  100% {
+    text-shadow: 0px 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 25px rgb(117, 117, 117), 0 0 30px #bc13fe,
+      0 0 45px #bc13fe, 0 0 60px #bc13fe;
+  }
+}
+
+
+/*
+este margin top en la clase col-auto que está adentro del elemento con la clase presentacion lo psue para que haya un espacio con el titulo que seria el elemento section.
+*/
+.presentacion .col-auto {
+  margin-top: 3em !important;
+}
+
+
+/*
+Este es el footer (pie de la pagina) el margin-top 25px lo puse para que tenga un poquito mas grande entre el main y footer
+después el flex lo mismo que el header.
+*/
+#footer {
+  margin-top: 25px;
+  flex: 0 0 auto;
+}
+
+/*
+acá modificamos la clase footer-texto que está adentro del elemento con la id footer, lo que hacemos es darle un text-decoration none, esto lo puse para los <a> que serian los links, si no lo pongo se ven feos con una linea abajo que no me gusta
+despues está el padding bottom que es para dejar un espacio de 3px entre cada texto del footer.
+*/
+#footer .footer-texto {
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+
+/*uso de text-align para la tarea*/
+
+#footer .centrado{
+  text-align: center;
+}
+
+/*
+-------------------------------
+LE PONEMOS COLORES A LOS ICONOS
+*/
+#footer .fa-discord,
+#footer .fa-globe-americas {
+  color: #7289da !important;
+}
+
+#footer .latamcommunity{
+  color: #af2f2f !important;
+  animation: ltmcmm 1.5s infinite alternate;
+}
+
+#footer .fa-github {
+  color: white !important;
+}
+
+#footer .fa-whatsapp {
+  color: #25d366 !important;
+}
+
+.fab.fa-instagram {
+  color: transparent;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+/*
+LE PONEMOS COLORES A LOS ICONOS
+-------------------------------
+*/
+
+#footer b {
+  color: #fdf7ff;
+  border-bottom: 1px solid #493b57 !important;
+}
+
+#footer .footer-texto {
+  color: #817291;
+}
+
+#navbarText a {
+  color: #ab77f1 !important;
+}
+
+
+
+
+/*
+Esto es para la tabla de juegos que jugué, es para los puntajes, hice que la estrella con la clase mitad que la mitad izquierda se vea de color blanco y mitad derecha de color negro (en el modo oscuro)
+*/
+#info-jugué .mitad {
+  background: -moz-linear-gradient(90deg, #fff 50%, #6c757d 50%);
+  background: -webkit-linear-gradient(90deg, #fff 50%, #6c757d 50%);
+  background: linear-gradient(90deg, #fff 50%, #6c757d 50%);
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*
+Esto es para la estrella incompleta que solo tenga el color gris (modo oscuro)
+*/
+#info-jugué .incompleto {
+  color: #6c757d !important;
+}
+
+
+
+/*
+Acá le cambio el color al icono que cambia el tema, en este caso es el sol que lo pongo un color amarillo
+*/
+#cambiar-tema .ico-tema-claro {
+  color: yellow;
+}
+
+/*
+Acá le cambio el color al icono que cambia el tema, en este caso es la luna que lo pongo un color gris
+*/
+#cambiar-tema .ico-tema-oscuro {
+  color: gray;
+}
+
+.container-iframe {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}

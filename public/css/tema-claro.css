@@ -1,0 +1,38 @@
+#tema-claro body {
+  background-image: radial-gradient(circle, #ebebeb, #f0f0f0, #f5f5f5, #fafafa, #ffffff);
+}
+
+#tema-claro #header .navbar, #tema-claro #footer{
+  background-color: #303030 !important;
+}
+
+#tema-claro .quien-soy b,
+#tema-claro .quien-soy h1 {
+  color: #474554;
+  text-shadow: #ACA7CB 0 0 5px;
+}
+
+#tema-claro .fa-js-square{
+  color:rgb(235, 177, 18) !important;
+}
+#tema-claro #header .active {
+  color: #ffffff !important;
+}
+
+#tema-claro #info-jugué .mitad {
+  background: -moz-linear-gradient(90deg, #6c757d 50%, #fff 50%);
+  background: -webkit-linear-gradient(90deg, #6c757d 50%, #fff 50%);
+  background: linear-gradient(90deg, #6c757d 50%, #fff 50%);
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#tema-claro #info-jugué .incompleto {
+  color: #fff !important;
+}
+
+#tema-claro #info-jugué .texto-ico{
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px;
+}
